@@ -7,36 +7,106 @@
     <link rel="stylesheet" href="/src/assets/styles/style.css">
 </head>
 <body>
-    <header>
+
+    <header class="site-header">
         <img src="/src/assets/img/logo.png" alt="Логотип" width="250">
-        <div class="breadcrumbs">
+
+        <nav class="breadcrumbs">
             <a href="index.html">Главная</a>
             <span><a href="contacts.html">Контакты</a></span>
-        </div>
+        </nav>
     </header>
 
-    <h1 class="main-title">Добро пожаловать</h1>
-    <p class="text">Рады видеть вас в нашей кондитерской</p>
+    <main>
 
-    <h3 class="section-title">О нас</h3>
-    <h4 class="subtitle">Готовим торты и десерты</h4>
-    <p class="text">Торты, пирожные и печенье из натуральных ингредиентов — свежие каждый день</p>
+        <section class="welcome">
+            <h1 class="main-title">Добро пожаловать</h1>
+            <p class="text">Рады видеть вас в нашей кондитерской</p>
+            <img src="/src/assets/img/logo.png" alt="Наша кондитерская" width="200">
+        </section>
 
-    <h3 class="section-title">Наши услуги</h3>
-    <p class="text">Принимаем заказы на праздники и делаем авторские десерты</p>
+        <hr>
+
+        <section class="about">
+            <article class="about-info">
+                <h3 class="section-title">О нас</h3>
+                <h4 class="subtitle">Готовим торты и десерты</h4>
+                <p class="text">
+                    Торты, пирожные и печенье из натуральных ингредиентов — свежие каждый день
+                </p>
+
+                <ul>
+                    <li>Натуральные ингредиенты</li>
+                    <li>Свежие десерты</li>
+                    <li>Авторские рецепты</li>
+                </ul>
+            </article>
+        </section>
+
+        <hr>
+
+        <section class="services">
+            <article class="services-info">
+                <h3 class="section-title">Наши услуги</h3>
+                <p class="text">
+                    Принимаем заказы на праздники и делаем авторские десерты
+                </p>
+
+                <ul>
+                    <li>Торты на заказ</li>
+                    <li>Пирожные</li>
+                    <li>Десерты для праздников</li>
+                </ul>
+
+                <img src="/src/assets/img/logo.png" alt="Наши десерты" width="200">
+            </article>
+        </section>
+
+        <hr>
+
+        <section class="order">
+            <h3 class="section-title">Сделать заказ</h3>
+            <p class="text">Оставьте свои данные, и мы свяжемся с вами</p>
+
+            <form class="contact-form">
+                <label>
+                    Имя
+                    <input class="form-field" type="text">
+                </label>
+
+                <label>
+                    Email
+                    <input class="form-field" type="email">
+                </label>
+
+                <label>
+                    Сообщение
+                    <textarea class="form-field"></textarea>
+                </label>
+
+                <button class="button-submit" type="submit">Отправить</button>
+            </form>
+        </section>
+
+    </main>
 
     <hr>
 
-    <footer>
+    <footer class="site-footer">
         <h3 class="section-title">Контакты</h3>
-        <p class="text">Свяжитесь с нами в телеграмме или по номеру телефона</p>
-        <hr>
+
+        <p class="text">
+            Свяжитесь с нами в телеграмме или по номеру телефона
+        </p>
+
         <ul>
             <li>Наш телеграмм: sweetcake</li>
             <li>+7 990 490 67 52</li>
             <li>sweetcake228@gmail.com</li>
         </ul>
+
         <p class="text">Все права защищены</p>
     </footer>
+
 </body>
 </html>
