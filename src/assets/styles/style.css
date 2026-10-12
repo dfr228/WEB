@@ -55,11 +55,11 @@
 .contact-form {
     width: 500px;
     max-width: 90%;
-    
+    text-align: center; 
     margin: 40px auto;
     padding: 45px;
 
-    background-image: url('/src/assets/img/contact-form.jpg');
+    background-image: url('/src/assets/img/form.jpg');
     background-size: cover;
     background-position: center;
 
