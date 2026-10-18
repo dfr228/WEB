@@ -1,131 +1,133 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная</title>
+    <title>SweetCake — кондитерская</title>
     <link rel="stylesheet" href="/src/assets/styles/style.css">
 </head>
 <body>
 
     <header class="site-header">
-        <img src="/src/assets/img/logo.png" alt="Логотип" width="300">
+        <a class="site-logo" href="index.html">
+            <img src="/src/assets/img/logo.png" alt="SweetCake" width="150">
+        </a>
 
-        <nav class="breadcrumbs">
-            <a href="index.html">Главная</a>
-            <span><a href="contacts.html">Контакты</a></span>
+        <nav class="main-nav">
+            <a class="active" href="index.html">Главная</a>
+            <a href="#about">О нас</a>
+            <a href="#services">Услуги</a>
+            <a href="contacts.html">Контакты</a>
         </nav>
+
+        <div class="header-contacts">
+            <a href="https://t.me/sweetcake">Telegram</a>
+            <a href="tel:+79904906752">+7 990 490 67 52</a>
+            <a class="header-button" href="#order">Заказать торт</a>
+        </div>
     </header>
 
-    <hr>
-
     <main class="main-content">
+        <section class="hero">
+            <div class="hero-info">
+                <p class="hero-label">♡ Кондитерская SweetCake</p>
 
-        <section class="welcome-section">
-            <article class="welcome-info">
-                <h1 class="main-title">Добро пожаловать</h1>
-                <p class="text">Рады видеть вас в нашей кондитерской</p>
-                <img src="/src/assets/img/welcome.png" alt="Наша кондитерская" width="550">
-            </article>
-        </section>
+                <h1 class="hero-title">
+                    Добро пожаловать
+                    <span>в нашу кондитерскую</span>
+                </h1>
 
-        <hr>
-
-        <section class="about-section">
-            <article class="about-info">
-                <h3 class="section-title">О нас</h3>
-                <h4 class="subtitle">Готовим торты и десерты</h4>
-                <p class="text">
-                    Торты, пирожные и печенье из натуральных ингредиентов — свежие каждый день
+                <p class="hero-description">
+                    Торты, пирожные и десерты из натуральных
+                    ингредиентов — свежие каждый день
                 </p>
 
-                <ul>
-                    <li>Натуральные ингредиенты</li>
-                    <li>Свежие десерты</li>
-                    <li>Авторские рецепты</li>
-                </ul>
-                <img src="/src/assets/img/us.jpg" alt="Наш подход" width="420">
-            </article>
+                <form class="contact-form hero-form" id="order">
+                    <h2>Сделать заказ</h2>
+                    <p>Оставьте свои данные, и мы свяжемся с вами</p>
 
-            <aside class="about-additional">
-                <h4 class="subtitle">Наш подход</h4>
-                <p class="text">Готовим свежие десерты из натуральных ингредиентов.</p>
-            </aside>
+                    <div class="form-grid">
+                        <label>
+                            Имя
+                            <input class="form-field" type="text"
+                                   name="name" placeholder="Ваше имя" required>
+                        </label>
+
+                        <label>
+                            Email
+                            <input class="form-field" type="email"
+                                   name="email" placeholder="example@mail.com" required>
+                        </label>
+
+                        <label class="message-field">
+                            Сообщение
+                            <textarea class="form-field" name="message"
+                                      placeholder="Какой торт вы хотите?"></textarea>
+                        </label>
+                    </div>
+
+                    <button class="button-submit" type="submit">
+                        Отправить заявку →
+                    </button>
+                </form>
+            </div>
+
+            <div class="hero-gallery" aria-label="Наши десерты">
+                <img class="gallery-cake"
+                     src="/src/assets/img/cake.jpg"
+                     alt="Торт с ягодами">
+
+                <img class="gallery-cupcakes"
+                     src="/src/assets/img/cupcakes.jpg"
+                     alt="Капкейки с кремом">
+
+                <img class="gallery-macarons"
+                     src="/src/assets/img/macarons.jpg"
+                     alt="Розовые макаруны">
+
+                <img class="gallery-dessert"
+                     src="/src/assets/img/dessert.jpg"
+                     alt="Пирожное с клубникой">
+            </div>
         </section>
 
-        <hr>
-
-        <section class="services-section">
-            <article class="services-info">
-                <h3 class="section-title">Наши услуги</h3>
-                <p class="text">
-                    Принимаем заказы на праздники и делаем авторские десерты
-                </p>
-
-                <ul>
-                    <li>Торты на заказ</li>
-                    <li>Пирожные</li>
-                    <li>Десерты для праздников</li>
-                </ul>
-
-                <img src="/src/assets/img/services.png" alt="Наши десерты" width="500">
-            </article>
-        </section>
-
-        <hr>
-
-        <section class="order-section">
-            <article class="order-info">
-                <h3 class="section-title">Сделать заказ</h3>
-                <p class="text">Вы можете оставить свои данные, и мы свяжемся с вами</p>
-            </article>
-
-            <form class="contact-form">
-                <label>
-                    Ваше имя:
-                    <input class="form-field" type="text">
-                </label>
-
-                <label>
-                    Номер телефона:
-                    <input class="form-field" type="email">
-                </label>
-                
-                <label>
-                    Электронная почта:
-                    <input class="form-field" type="email">
-                </label>
-
-                <label>
-                    Ваш вопрос:
-                    <textarea class="form-field"></textarea>
-                </label>
-
-                <button class="button-submit" type="submit">Отправить</button>
-            </form>
-        </section>
-
-    </main>
-
-    <hr>
-
-    <footer class="site-footer">
-        <section class="footer-contacts">
-            <h3 class="section-title">Контакты</h3>
+        <section class="extra-section" id="about">
+            <h2 class="section-title">О нашей кондитерской</h2>
             <p class="text">
-                Свяжитесь с нами в телеграмме или по номеру телефона
+                Готовим торты и десерты из натуральных ингредиентов
+                и создаём сладости для ваших особенных моментов.
             </p>
-            <img src="/src/assets/img/last.jpg" alt="Наш подход" width="450">
+        </section>
+
+        <section class="extra-section" id="services">
+            <h2 class="section-title">Наши услуги</h2>
             <ul>
-                <li>Наш телеграмм: sweetcake</li>
-                <li>+7 990 490 67 52</li>
-                <li>sweetcake228@gmail.com</li>
+                <li>Торты на заказ</li>
+                <li>Пирожные и капкейки</li>
+                <li>Десерты для праздников</li>
             </ul>
         </section>
+    </main>
 
-        <hr>
+    <footer class="site-footer">
+        <div class="footer-brand">
+            <img src="/src/assets/img/logo.png" alt="SweetCake" width="120">
+            <p>Сладкие моменты — вместе с нами ♡</p>
+        </div>
 
-        <p class="text">Все права защищены</p>
+        <div class="footer-info">
+            <h2>Контакты</h2>
+            <p>Свяжитесь с нами в Telegram или по телефону</p>
+        </div>
+
+        <ul class="footer-contacts">
+            <li><a href="https://t.me/sweetcake">Telegram: sweetcake</a></li>
+            <li><a href="tel:+79904906752">+7 990 490 67 52</a></li>
+            <li><a href="mailto:sweetcake228@gmail.com">sweetcake228@gmail.com</a></li>
+        </ul>
+
+        <p class="copyright">Все права защищены © SweetCake</p>
     </footer>
 
 </body>
