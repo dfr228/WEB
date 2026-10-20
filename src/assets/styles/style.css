@@ -84,7 +84,7 @@
         #A8D2CF 100%
     ); border-radius: 50%;
 }
-/*Общая структура страницы*/
+
 html {
     scroll-behavior: smooth; scroll-padding-top: 110px;
 }
@@ -131,7 +131,7 @@ body {
     padding: 12px 20px; color: #fff;
     background: linear-gradient(100deg, #d83f70, #f28da8); border-radius: 30px;
 }
-/*Первый экран: две колонки Grid*/
+/*Первый экран*/
 .hero,
 .contacts-hero {
     min-height: calc(100vh - 88px); padding: 48px 6%;
@@ -243,14 +243,13 @@ body {
 .contact-list a {
     color: #c73566;
 }
-/*Дополнительные разделы главной*/
 .extra-section {
     padding: 48px 8%; background: #fff;
 }
 .extra-section .section-title {
     color: #9f294f;
 }
-/*Подвал всегда внизу, если контента мало*/
+/*Подвал*/
 .site-footer {
     flex-shrink: 0; display: grid;
     grid-template-columns: 1fr 1fr 1.2fr auto; align-items: center;
@@ -283,7 +282,7 @@ body {
 .copyright {
     color: #62545d; font-size: 13px;
 }
-/*Планшеты и телефоны*/
+
 @media (max-width: 1100px) {
     .site-header {
         grid-template-columns: auto 1fr;
