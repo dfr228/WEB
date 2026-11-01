@@ -1,0 +1,186 @@
+// =========================================================
+// Главный экран + анимация телефонов
+// =========================================================
+@use "sass:math";
+@use "../abstracts" as *;
+
+.hero {
+  position: relative;
+  margin-top: -82px;          // фон уходит под шапку
+  padding: 82px 0 0;
+  background: $bg-light;
+  overflow: hidden;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    min-height: 820px;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    flex: 0 1 676px;
+    padding: 80px 0;
+  }
+
+  &__title {
+    @include title(40px, 700, 1.3);
+    color: $dark;
+  }
+
+  &__text {
+    max-width: 600px;
+    margin-top: 36px;
+    font-size: 16px;
+    line-height: 1.3;
+    color: $dark;
+  }
+
+  &__form {
+    margin-top: 64px;
+  }
+
+  // правая часть: область с бегущими телефонами
+  &__image {
+    position: relative;
+    flex: 1 1 520px;
+    align-self: stretch;
+    margin-right: -$gutter;
+
+    @include laptop { margin-right: -$gutter-laptop; }
+  }
+
+  // планшет: телефоны под формой, на всю ширину экрана
+  @include tablet {
+    &__inner {
+      flex-direction: column;
+      align-items: stretch;
+      min-height: 0;
+      gap: 0;
+    }
+
+    &__content {
+      flex: none;
+      padding: 64px 0 40px;
+    }
+
+    &__image {
+      flex: none;
+      height: 480px;
+      margin: 0 (-$gutter-tablet);
+      overflow: hidden;
+    }
+  }
+
+  @include mobile {
+    &__title { font-size: 28px; }
+
+    &__text {
+      margin-top: 20px;
+      font-size: 15px;
+    }
+
+    &__form { margin-top: 36px; }
+
+    &__image {
+      height: 380px;
+      margin: 0 (-$gutter-mobile);
+    }
+  }
+
+  @include small {
+    &__title { font-size: 26px; }
+  }
+}
+
+// ---------- Колонки телефонов ----------
+.phones {
+  position: absolute;
+  top: -360px;
+  bottom: -360px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: $phone-gap;
+  transform: rotate(-12deg);
+
+  // при наведении анимация останавливается
+  &:hover .phones__track {
+    animation-play-state: paused;
+  }
+
+  &__column {
+    flex-shrink: 0;
+    width: $phone-width;
+  }
+
+  // лента: картинки 1–3 + их копия, сдвиг на 50% даёт бесшовный цикл
+  &__track {
+    animation: phones-up $phones-duration linear infinite;
+    will-change: transform;
+  }
+
+  // правая колонка едет в другую сторону и чуть медленнее
+  &__column--right &__track {
+    animation-name: phones-down;
+    animation-duration: $phones-duration * 1.2;
+  }
+
+  @include tablet {
+    top: -300px;
+    bottom: -300px;
+  }
+
+  @include mobile {
+    gap: math.div($phone-gap, 1.6);
+
+    &__column { width: 150px; }
+  }
+}
+
+.phone {
+  aspect-ratio: 9 / 19.5;
+  margin-bottom: $phone-gap;    // отступ внизу, а не gap — так половины ленты равны
+  border: 6px solid $white;
+  border-radius: 32px;
+  background-color: $white;
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 20px 40px rgba($dark, .14);
+
+  @include mobile {
+    margin-bottom: math.div($phone-gap, 1.6);
+    border-width: 4px;
+    border-radius: 20px;
+  }
+}
+
+// Фоновые картинки: phone-left-1.jpg … phone-right-3.jpg
+@each $side in left, right {
+  @for $i from 1 through $phones-count {
+    .phone--#{$side}-#{$i} {
+      background-image: url("#{$img-path}phone-#{$side}-#{$i}.jpg");
+    }
+  }
+}
+
+@keyframes phones-up {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-50%); }
+}
+
+@keyframes phones-down {
+  from { transform: translateY(-50%); }
+  to   { transform: translateY(0); }
+}
+
+// Для тех, у кого в системе отключена анимация
+@media (prefers-reduced-motion: reduce) {
+  .phones__track {
+    animation: none;
+  }
+}

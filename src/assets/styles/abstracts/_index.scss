@@ -1,0 +1,4 @@
+// Собираем переменные и миксины, чтобы подключать их одной строкой:
+// @use "../abstracts" as *;
+@forward "variables";
+@forward "mixins";

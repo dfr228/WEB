@@ -1,0 +1,52 @@
+// =========================================================
+// Переменные
+// =========================================================
+
+// Цвета
+$blue: #2563eb;          // фон синих блоков
+$blue-accent: #2f6bea;   // акцентный текст, кнопки
+$blue-hover: #1d4fd1;
+$blue-light: #93b4ff;
+$dark: #111827;          // основной текст, подвал
+$text: #1f2937;
+$gray: #6b7280;
+$gray-light: #9ca3af;
+$gray-dark: #4b5563;
+$line: #e5e7eb;
+$bg-light: #f3f4f6;
+$white: #ffffff;
+$error: #dc2626;
+
+// Шрифт
+$font: "Inter", Arial, sans-serif;
+
+// Сетка
+$container: 1224px;
+$gutter: 108px;          // отступ контейнера на desktop
+$gutter-laptop: 48px;
+$gutter-tablet: 32px;
+$gutter-mobile: 16px;
+
+// Скругления
+$radius: 16px;
+$radius-card: 12px;
+
+// Тени
+$shadow-header: 0 4px 18px rgba($dark, .07);
+$shadow-card: 0 4px 24px rgba($dark, .06);
+$shadow-menu: 0 12px 32px rgba($dark, .12);
+
+// Брейкпоинты
+$bp-laptop: 1200px;
+$bp-tablet: 1024px;
+$bp-mobile: 767px;
+$bp-small: 425px;
+
+// Путь к картинкам (относительно скомпилированного style.css)
+$img-path: "../img/";
+
+// Анимация телефонов на первом экране
+$phone-width: 240px;
+$phone-gap: 32px;
+$phones-count: 3;        // картинок в каждой колонке (phone-left-1…3, phone-right-1…3)
+$phones-duration: 40s;   // за сколько колонка прокручивается на один круг

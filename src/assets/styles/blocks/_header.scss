@@ -1,0 +1,185 @@
+// =========================================================
+// Шапка
+// =========================================================
+@use "../abstracts" as *;
+
+.header {
+  position: sticky;
+  top: 12px;
+  z-index: 100;
+  max-width: 1232px;
+  margin: 12px auto 0;
+  padding: 0 12px;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    min-height: 58px;
+    padding: 0 24px;
+    background: $white;
+    border-radius: $radius;
+    box-shadow: $shadow-header;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 32px;
+  }
+
+  &__contacts {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    font-size: 14px;
+    color: $blue-accent;
+    white-space: nowrap;
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__phones,
+  &__mail {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__mail {
+    gap: 10px;
+  }
+
+  @include laptop {
+    &__phones a:nth-of-type(2) {
+      display: none;
+    }
+  }
+
+  // планшет и телефон: бургер-меню
+  @include tablet {
+    &__inner {
+      position: relative;
+    }
+
+    &__menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 12px;
+      right: 12px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+      padding: 24px;
+      background: $white;
+      border-radius: $radius;
+      box-shadow: $shadow-menu;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: opacity .25s, transform .25s, visibility .25s;
+    }
+
+    &__contacts {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 16px;
+    }
+
+    &__phones a:nth-of-type(2) {
+      display: inline;
+    }
+  }
+
+  @include mobile {
+    top: 8px;
+    margin-top: 8px;
+    padding: 0 8px;
+
+    &__inner {
+      padding: 0 16px;
+    }
+  }
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 800;
+  color: $blue-accent;
+  white-space: nowrap;
+
+  @include mobile { font-size: 18px; }
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+  margin-left: 56px;
+  margin-right: auto;
+
+  &__link {
+    font-size: 15px;
+    color: $dark;
+    transition: color .2s;
+
+    &:hover {
+      color: $blue-accent;
+    }
+  }
+
+  @include laptop { margin-left: 16px; }
+
+  @include tablet {
+    flex-direction: column;
+    gap: 16px;
+    margin: 0;
+
+    &__link { font-size: 18px; }
+  }
+}
+
+// --- Бургер без JS: скрытый чекбокс + label ---
+.menu-toggle {
+  display: none;
+
+  // открытое меню
+  &:checked ~ .header__menu {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  // бургер превращается в крестик
+  &:checked + .burger span {
+    &:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    &:nth-child(2) { opacity: 0; }
+    &:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  }
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+  padding: 10px 8px;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  span {
+    display: block;
+    height: 2px;
+    background: $dark;
+    border-radius: 2px;
+    transition: transform .25s, opacity .25s;
+  }
+
+  @include tablet { display: flex; }
+}

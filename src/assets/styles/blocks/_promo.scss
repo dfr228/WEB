@@ -1,0 +1,123 @@
+// =========================================================
+// Синие промо-блоки: «Let's discuss» и книга
+// =========================================================
+@use "../abstracts" as *;
+
+// зернистая текстура фона, как в макете
+$noise: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E";
+
+.promo {
+  position: relative;
+  padding: 80px 0;
+  color: $white;
+  background-color: $blue;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: .18;
+    pointer-events: none;
+    background-image: url($noise);
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+  }
+
+  &__title {
+    @include title(36px, 700, 1.45);
+  }
+
+  &__text {
+    max-width: 400px;
+    margin-top: 30px;
+    font-size: 15px;
+    line-height: 1.35;
+  }
+
+  .form-card {
+    color: $text;
+  }
+
+  // --- блок с книгой ---
+  &--book {
+    padding: 40px 0;
+
+    .promo__content { flex: 0 1 600px; }
+    .promo__title { max-width: 580px; }
+  }
+
+  &__book {
+    flex: 0 0 auto;
+    margin-right: 160px;
+    transform: rotate(-1deg);
+    filter: drop-shadow(0 18px 24px rgba(#000, .25));
+
+    img { width: 290px; }
+  }
+
+  // --- блок «Let's discuss» ---
+  &--discuss .promo__content {
+    flex: 0 1 420px;
+  }
+
+  @include laptop {
+    &__book { margin-right: 40px; }
+  }
+
+  @include tablet {
+    &__inner {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 40px;
+    }
+
+    &--book .promo__content,
+    &--discuss .promo__content {
+      flex: none;
+    }
+
+    &__book {
+      margin: 0 auto;
+
+      img { width: 240px; }
+    }
+  }
+
+  @include mobile {
+    padding: 56px 0;
+
+    &--book { padding: 56px 0; }
+
+    &__title {
+      font-size: 28px;
+      line-height: 1.3;
+    }
+
+    &__text { margin-top: 16px; }
+
+    &__book img { width: 200px; }
+  }
+
+  @include small {
+    &__title { font-size: 26px; }
+  }
+}
+
+.book-form {
+  margin-top: 40px;
+
+  @include mobile { margin-top: 28px; }
+}
+
+.discuss-form {
+  flex: 0 1 600px;
+
+  @include tablet { flex: none; }
+}

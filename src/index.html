@@ -11,6 +11,7 @@
 </head>
 <body>
 
+  <!-- Иконки (подключаются через <use href="#...">) -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/>
@@ -35,10 +36,12 @@
     </symbol>
   </svg>
 
+  <!-- ===== ШАПКА ===== -->
   <header class="header">
     <div class="header__inner">
       <a href="#" class="logo">IT WEBSITE</a>
 
+      <!-- Бургер-меню без JS: чекбокс + label -->
       <input type="checkbox" id="menu-toggle" class="menu-toggle">
       <label for="menu-toggle" class="burger" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -69,6 +72,7 @@
   </header>
 
   <main>
+    <!-- ===== ГЛАВНЫЙ ЭКРАН ===== -->
     <section class="hero">
       <div class="container hero__inner">
         <div class="hero__content">
@@ -100,12 +104,37 @@
           </form>
         </div>
 
-        <div class="hero__image">
-          <img src="assets/img/hero.png" alt="Screens of mobile applications">
+        <!-- Бегущие колонки телефонов: картинки задаются фоном в SCSS (blocks/_hero.scss) -->
+        <div class="hero__image" aria-hidden="true">
+          <div class="phones">
+            <div class="phones__column phones__column--left">
+              <div class="phones__track">
+                <div class="phone phone--left-1"></div>
+                <div class="phone phone--left-2"></div>
+                <div class="phone phone--left-3"></div>
+                <!-- копия для бесшовной прокрутки -->
+                <div class="phone phone--left-1"></div>
+                <div class="phone phone--left-2"></div>
+                <div class="phone phone--left-3"></div>
+              </div>
+            </div>
+            <div class="phones__column phones__column--right">
+              <div class="phones__track">
+                <div class="phone phone--right-1"></div>
+                <div class="phone phone--right-2"></div>
+                <div class="phone phone--right-3"></div>
+                <!-- копия для бесшовной прокрутки -->
+                <div class="phone phone--right-1"></div>
+                <div class="phone phone--right-2"></div>
+                <div class="phone phone--right-3"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- ===== ПОЛНЫЙ ЦИКЛ РАЗРАБОТКИ ===== -->
     <section class="services" id="services">
       <div class="container services__inner">
         <div class="services__info">
@@ -133,6 +162,7 @@
       </div>
     </section>
 
+    <!-- ===== ОБСУДИМ ПРОЕКТ ===== -->
     <section class="promo promo--discuss" id="discuss">
       <div class="container promo__inner">
         <div class="promo__content">
@@ -160,6 +190,7 @@
       </div>
     </section>
 
+    <!-- ===== НАША КОМАНДА ===== -->
     <section class="team" id="team">
       <div class="container team__inner">
         <div class="team__content">
@@ -182,6 +213,7 @@
       </div>
     </section>
 
+    <!-- ===== КНИГА ===== -->
     <section class="promo promo--book" id="book">
       <div class="container promo__inner">
         <div class="promo__content">
@@ -216,6 +248,7 @@
       </div>
     </section>
 
+    <!-- ===== FAQ (раскрытие через <details>, без JS) ===== -->
     <section class="faq" id="faq">
       <div class="container">
         <h2 class="section-title faq__title">FAQ</h2>
@@ -273,6 +306,7 @@
     </section>
   </main>
 
+  <!-- ===== ПОДВАЛ ===== -->
   <footer class="footer" id="contacts">
     <div class="footer__card">
       <a href="#" class="footer__logo">IT WEBSITE</a>

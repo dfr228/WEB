@@ -1,0 +1,79 @@
+// =========================================================
+// Базовые стили и сброс
+// =========================================================
+@use "../abstracts" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  margin: 0;
+  font-family: $font;
+  font-size: 16px;
+  line-height: 1.4;
+  color: $text;
+  background: $white;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.container {
+  max-width: $container + $gutter * 2;
+  margin: 0 auto;
+  padding: 0 $gutter;
+
+  @include laptop { padding: 0 $gutter-laptop; }
+  @include tablet { padding: 0 $gutter-tablet; }
+  @include mobile { padding: 0 $gutter-mobile; }
+}
+
+.section-title {
+  @include title(40px);
+  color: $dark;
+
+  @include mobile { font-size: 30px; }
+  @include small { font-size: 28px; }
+}
+
+.accent {
+  color: $blue-accent;
+}

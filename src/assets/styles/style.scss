@@ -1,0 +1,22 @@
+// =========================================================
+// IT WEBSITE — главный файл стилей (SCSS)
+// Компиляция: npx sass src/assets/styles/style.scss src/assets/styles/style.css
+// Адаптив: desktop (> 1024px), планшет (≤ 1024px / 768px),
+// телефон (≤ 767px / 425px)
+// =========================================================
+
+// Основа
+@use "base/base";
+
+// Компоненты
+@use "components/button";
+@use "components/form";
+
+// Блоки страницы (в порядке на странице)
+@use "blocks/header";
+@use "blocks/hero";
+@use "blocks/services";
+@use "blocks/promo";
+@use "blocks/team";
+@use "blocks/faq";
+@use "blocks/footer";

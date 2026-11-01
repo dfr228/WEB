@@ -1,0 +1,100 @@
+// =========================================================
+// Полный цикл разработки
+// =========================================================
+@use "../abstracts" as *;
+
+.services {
+  padding: 120px 0;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 60px;
+  }
+
+  &__subtitle {
+    margin-top: 28px;
+    font-size: 14px;
+    font-weight: 500;
+    color: $dark;
+  }
+
+  &__list {
+    @include flex-column(16px);
+    padding-top: 4px;
+  }
+
+  @include tablet {
+    padding: 80px 0;
+
+    &__inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    &__list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 24px;
+    }
+  }
+
+  @include mobile {
+    padding: 60px 0;
+
+    &__list {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+  }
+}
+
+.stack {
+  max-width: 520px;
+  margin-top: 36px;
+
+  & + & {
+    margin-top: 28px;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    color: $dark;
+  }
+
+  &__list {
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: $gray;
+  }
+}
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 2px 0 4px;
+  border-bottom: 2px solid transparent;
+  font-size: 17px;
+  color: $dark;
+  transition: border-color .2s, color .2s;
+
+  @include icon-size(18px);
+
+  .icon {
+    color: $blue-accent;
+    transition: transform .2s;
+  }
+
+  &:hover {
+    border-bottom-color: $blue-accent;
+
+    .icon {
+      transform: translateX(3px);
+    }
+  }
+
+  @include tablet { justify-self: start; }
+}
