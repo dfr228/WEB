@@ -1,163 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT WEBSITE - Mobile Development</title>
-    <!-- ИСПРАВЛЕННЫЙ ПУТЬ: без слэша в начале, с учетом папки styles -->
-    <link rel="stylesheet" href="assets/styles/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT WEBSITE — development of mobile applications and web services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles/style.css">
 </head>
 <body>
 
-    <!-- ШАПКА -->
-    <header class="site-header">
-        <a class="logo" href="#">
-            <strong>IT WEBSITE</strong>
-        </a>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/>
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/>
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>
+    </symbol>
+    <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/>
+    </symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M12 4v16M4 12h16"/>
+    </symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m9 6 6 6-6 6"/>
+    </symbol>
+    <symbol id="i-play" viewBox="0 0 24 24">
+      <path d="M8 5.5v13l10-6.5z" fill="currentColor"/>
+    </symbol>
+  </svg>
 
-        <nav class="main-nav">
-            <a href="#services">Services</a>
-            <a href="#media">Media</a>
-            <a href="#cases">Cases</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contacts">Contacts</a>
+  <header class="header">
+    <div class="header__inner">
+      <a href="#" class="logo">IT WEBSITE</a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <div class="header__menu">
+        <nav class="nav">
+          <a href="#services" class="nav__link">Services</a>
+          <a href="#book" class="nav__link">Media</a>
+          <a href="#team" class="nav__link">Cases</a>
+          <a href="#faq" class="nav__link">FAQ</a>
+          <a href="#contacts" class="nav__link">Contacts</a>
         </nav>
 
-        <div class="header-contacts">
-            <a href="tel:+77072548147">+7 (707) 254 81 47</a>
-            <a href="mailto:thousanditcompany@gmail.com" class="email-link">✉ thousanditcompany@gmail.com</a>
+        <div class="header__contacts">
+          <div class="header__phones">
+            <svg class="icon"><use href="#i-phone"/></svg>
+            <a href="tel:+71111111111">+7 (111) 111 11 11</a>
+            <a href="tel:+71111111111">+7 (111) 111 11 11</a>
+          </div>
+          <a href="mailto:itcompany@mail.com" class="header__mail">
+            <svg class="icon"><use href="#i-mail"/></svg>
+            itcompany@mail.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <h1 class="hero__title">
+            Development of <span class="accent">mobile applications</span>
+            and <span class="accent">web services</span> of any complexity
+          </h1>
+          <p class="hero__text">
+            We create mobile applications for iOS, Android that transfer your business
+            to mobile applications of your customers' devices
+          </p>
+
+          <form class="form-card hero__form" action="#" method="post">
+            <h2 class="form-card__title">Leave your contacts and we will call you back within 30 minutes</h2>
+            <div class="form-card__row">
+              <label class="field">
+                <span class="field__label">Phone number</span>
+                <span class="field__phone">
+                  <span class="field__flag"></span>
+                  <input type="tel" name="phone" class="field__input" placeholder="+7 (111) 111-11-11" required>
+                </span>
+              </label>
+              <label class="field">
+                <span class="field__label">Full name</span>
+                <input type="text" name="name" class="field__input" placeholder="Иван Иванов" required>
+              </label>
+              <button type="submit" class="btn btn--tall">Get consultation</button>
+            </div>
+          </form>
         </div>
 
-        <button class="burger-menu" aria-label="Открыть меню">
-            <span></span><span></span><span></span>
-        </button>
-    </header>
+        <div class="hero__image">
+          <img src="assets/img/hero.png" alt="Screens of mobile applications">
+        </div>
+      </div>
+    </section>
 
-    <!-- ГЛАВНЫЙ КОНТЕНТ -->
-    <main class="main-content">
-        
-        <!-- ПЕРВЫЙ ЭКРАН (HERO) -->
-        <section class="hero">
-            <div class="hero-info">
-                <h1>
-                    Development of <span>mobile applications</span> and <span>web services</span> of any complexity
-                </h1>
-
-                <p class="hero-description">
-                    We create mobile applications for iOS, Android that transfer your business to mobile applications of your customers' devices.
-                </p>
-
-                <form class="consultation-form">
-                    <h2>Leave your contacts and we will call you back within 30 minutes</h2>
-
-                    <div class="form-fields">
-                        <label>
-                            Phone number
-                            <input type="tel" placeholder="+7 (702) 517-11-98">
-                        </label>
-
-                        <label>
-                            Full name
-                            <input type="text" placeholder="Your name">
-                        </label>
-
-                        <button type="submit">Get consultation</button>
-                    </div>
-                </form>
-            </div>
-
-            <div class="hero-gallery">
-                <!-- Укажите путь к вашей картинке из папки img -->
-                <img src="assets/img/app-screen.png" alt="Mobile application screens">
-            </div>
-        </section>
-
-        <!-- ВТОРОЙ ЭКРАН (УСЛУГИ) -->
-        <section class="services" id="services">
-            <div class="services-header">
-                <h2>Full development cycle</h2>
-                <p>We use proven technologies</p>
-            </div>
-
-            <div class="services-layout">
-                <!-- Левая часть: Технологии -->
-                <div class="tech-columns">
-                    <div class="tech-block">
-                        <h3>Web</h3>
-                        <p>PHP / JavaScript / Node.JS / Web Socket / Socket.io / Vue.js / Nuxt / MySQL / Laravel / GO lang / django / Python</p>
-                    </div>
-                    <div class="tech-block">
-                        <h3>Mobile</h3>
-                        <p>Swift / Kotlin / Namastee / Firebase / CoreData / Realm / OkHttp / Retrofit / Alamofire / REST / GraphQL</p>
-                    </div>
-                </div>
-
-                <!-- Правая часть: Услуги со стрелками -->
-                <div class="services-list">
-                    <a href="#" class="service-item">iOS development <span>&#8594;</span></a>
-                    <a href="#" class="service-item">Android development <span>&#8594;</span></a>
-                    <a href="#" class="service-item">Web development <span>&#8594;</span></a>
-                    <a href="#" class="service-item">UI/UX design <span>&#8594;</span></a>
-                    <a href="#" class="service-item">Testing <span>&#8594;</span></a>
-                    <a href="#" class="service-item">Launch <span>&#8594;</span></a>
-                    <a href="#" class="service-item">IT consulting <span>&#8594;</span></a>
-                </div>
-            </div>
-        </section>
-
-        <!-- БАННЕР ПРИЗЫВ К ДЕЙСТВИЮ -->
-        <section class="contact-banner" id="contacts">
-            <div class="banner-content">
-                <h2>Let's discuss<br>Your project</h2>
-                <p>Let's figure out how to create an effective application, its cost and terms of its development</p>
-            </div>
-
-            <div class="banner-form">
-                <form>
-                    <div class="banner-fields">
-                        <label>
-                            Phone number
-                            <input type="tel" placeholder="+7 (702) 517-11-98">
-                        </label>
-                        <label>
-                            Full name
-                            <input type="text" placeholder="Your name">
-                        </label>
-                    </div>
-                    <button type="submit">Discuss the project</button>
-                </form>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- ПОДВАЛ (FOOTER) -->
-    <footer class="site-footer">
-        <h2 class="footer-title">IT WEBSITE</h2>
-        
-        <div class="footer-grid">
-            <div class="footer-item">
-                <span class="footer-label">Contact nums</span>
-                <a href="tel:+77783959026">+7 (778) 395 90 26</a>
-            </div>
-            <div class="footer-item">
-                <span class="footer-label">Post</span>
-                <a href="mailto:mail@mail.com">mail@mail.com</a>
-            </div>
-            <div class="footer-item">
-                <span class="footer-label">Adress</span>
-                <span>City city, steet st. 90</span>
-            </div>
-            <div class="footer-item">
-                <span class="footer-label">Leave a request</span>
-                <a href="#">Leave a request</a>
-            </div>
+    <section class="services" id="services">
+      <div class="container services__inner">
+        <div class="services__info">
+          <h2 class="section-title">Full development cycle</h2>
+          <p class="services__subtitle">We use proven technologies</p>
+          <div class="stack">
+            <h3 class="stack__title">Web</h3>
+            <p class="stack__list">PHP / Javascript / Node.JS / Web Socket / Socket.io / Vue.js/ Nuxt / MySQL / Laravel / GO lang / django / Python</p>
+          </div>
+          <div class="stack">
+            <h3 class="stack__title">Mobile</h3>
+            <p class="stack__list">Swift / Kotlin / Alamofire / Firebase / CoreData / Room / Realm / Coroutine / RxJava / RxSwift / Unit Test / Navigation</p>
+          </div>
         </div>
 
-        <div class="footer-bottom">
-            <span>🌍</span> We work throughout world
+        <ul class="services__list">
+          <li><a href="#discuss" class="service-link">iOS development<svg class="icon"><use href="#i-chevron"/></svg></a></li>
+          <li><a href="#discuss" class="service-link">Android development<svg class="icon"><use href="#i-chevron"/></svg></a></li>
+          <li><a href="#discuss" class="service-link">Web development<svg class="icon"><use href="#i-chevron"/></svg></a></li>
+          <li><a href="#discuss" class="service-link">UI/UX design<svg class="icon"><use href="#i-chevron"/></svg></a></li>
+          <li><a href="#discuss" class="service-link">Testing<svg class="icon"><use href="#i-chevron"/></svg></a></li>
+          <li><a href="#discuss" class="service-link">Launch<svg class="icon"><use href="#i-chevron"/></svg></a></li>
+          <li><a href="#discuss" class="service-link">IT consulting<svg class="icon"><use href="#i-chevron"/></svg></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="promo promo--discuss" id="discuss">
+      <div class="container promo__inner">
+        <div class="promo__content">
+          <h2 class="promo__title">Let's discuss<br>Your project</h2>
+          <p class="promo__text">Let's figure out how to create an effective application, its cost and terms of its development</p>
         </div>
-    </footer>
+        <form class="form-card discuss-form" action="#" method="post">
+          <div class="form-card__grid">
+            <label class="field">
+              <span class="field__label">Best phone number</span>
+              <span class="field__phone">
+                <span class="field__flag"></span>
+                <input type="tel" name="phone" class="field__input" placeholder="+7 (702) 517-11-98" required>
+              </span>
+            </label>
+            <label class="field">
+              <span class="field__label">Full name</span>
+              <input type="text" name="name" class="field__input" placeholder="Иван Иванов" required>
+            </label>
+          </div>
+          <div class="form-card__footer">
+            <button type="submit" class="btn">Discuss the project</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="team" id="team">
+      <div class="container team__inner">
+        <div class="team__content">
+          <h2 class="section-title">Our team</h2>
+          <p class="team__text">Thousand is a full-cycle digital production company with its own product analytics, design, web and mobile development.</p>
+          <ul class="team__stats">
+            <li class="stat"><span class="stat__value">28</span><span class="stat__label">team members</span></li>
+            <li class="stat"><span class="stat__value">+100</span><span class="stat__label">projects</span></li>
+            <li class="stat"><span class="stat__value">7 years</span><span class="stat__label">in IT sphere</span></li>
+          </ul>
+          <p class="team__text">All the necessary specialists - from a designer to a tester - are on our staff. We hire the best specialists in the market. It's expensive but worth it</p>
+        </div>
+
+        <div class="team__video">
+          <img src="assets/img/team.jpg" alt="Our team">
+          <a href="#team" class="play-btn" aria-label="Play video">
+            <svg class="icon"><use href="#i-play"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="promo promo--book" id="book">
+      <div class="container promo__inner">
+        <div class="promo__content">
+          <h2 class="promo__title">Get the book for free by leaving your contacts</h2>
+          <form class="form-card book-form" action="#" method="post">
+            <div class="form-card__grid">
+              <label class="field">
+                <span class="field__label">Phone number</span>
+                <span class="field__phone">
+                  <span class="field__flag"></span>
+                  <input type="tel" name="phone" class="field__input" placeholder="+7 (111) 111-11-11" required>
+                </span>
+              </label>
+              <label class="field">
+                <span class="field__label">Full name</span>
+                <input type="text" name="name" class="field__input" placeholder="Your full name" required>
+              </label>
+              <label class="field field--wide">
+                <span class="field__label">email</span>
+                <input type="email" name="email" class="field__input" placeholder="mail@mail.com" required>
+              </label>
+            </div>
+            <div class="form-card__footer">
+              <button type="submit" class="btn">Send me ebook to my mail</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="promo__book">
+          <img src="assets/img/book.png" alt="Book «Top 10 mistakes in mobile app development»">
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="container">
+        <h2 class="section-title faq__title">FAQ</h2>
+        <div class="faq__grid">
+          <div class="faq__col">
+            <details class="faq-item">
+              <summary class="faq-item__head">
+                <span class="faq-item__question">What is the cost of a mobile application?</span>
+                <span class="faq-item__toggle"><svg class="icon"><use href="#i-plus"/></svg></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>The cost depends on the number of screens, the complexity of the logic, integrations with external services and the platforms you need.</p>
+                <p>After a short call we prepare a detailed estimate with a breakdown by stages, so you know exactly what you are paying for.</p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-item__head">
+                <span class="faq-item__question">Do you provide a guarantee for the mobile application?</span>
+                <span class="faq-item__toggle"><svg class="icon"><use href="#i-plus"/></svg></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>Yes. We fix any errors found after the release free of charge during the <b>warranty period of 6 months.</b></p>
+                <p>After that, you can continue with technical support under a separate agreement.</p>
+              </div>
+            </details>
+          </div>
+
+          <div class="faq__col">
+            <details class="faq-item" open>
+              <summary class="faq-item__head">
+                <span class="faq-item__question">How long will development take?</span>
+                <span class="faq-item__toggle"><svg class="icon"><use href="#i-plus"/></svg></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>Development terms directly depend on the requirements for the mobile application, the characteristics of the company, as well as the wishes of the customer.</p>
+                <p>Average development time from start to finished application:<br>
+                  Medium projects up to <b>3 months.</b><br>
+                  Large projects about <b>4-6 months.</b><br>
+                  To get a more accurate estimate of the project completion time, it is necessary to determine the main task of the application, think over its logic and functionality.</p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-item__head">
+                <span class="faq-item__question">I will not tell my idea, do you guarantee confidentiality?</span>
+                <span class="faq-item__toggle"><svg class="icon"><use href="#i-plus"/></svg></span>
+              </summary>
+              <div class="faq-item__answer">
+                <p>Of course. Before discussing the details we sign a <b>non-disclosure agreement (NDA).</b></p>
+                <p>All rights to the source code and design are transferred to you after the project is completed.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contacts">
+    <div class="footer__card">
+      <a href="#" class="footer__logo">IT WEBSITE</a>
+      <div class="footer__grid">
+        <div class="footer__item">
+          <span class="footer__label"><svg class="icon"><use href="#i-phone"/></svg>Contact nums</span>
+          <a href="tel:+77783959026" class="footer__value">+7 (778) 395 90 26</a>
+        </div>
+        <div class="footer__item">
+          <span class="footer__label"><svg class="icon"><use href="#i-mail"/></svg>Post</span>
+          <a href="mailto:mail@mail.com" class="footer__value">mail@mail.com</a>
+        </div>
+        <div class="footer__item">
+          <span class="footer__label"><svg class="icon"><use href="#i-pin"/></svg>Adress</span>
+          <span class="footer__value">City city, steet st. 90</span>
+        </div>
+        <div class="footer__item">
+          <span class="footer__label"><svg class="icon"><use href="#i-file"/></svg>Leave a request</span>
+          <a href="#discuss" class="footer__value">Leave a request</a>
+        </div>
+      </div>
+      <p class="footer__world"><span class="footer__map"></span>We work throughout world</p>
+    </div>
+  </footer>
+
 </body>
 </html>
