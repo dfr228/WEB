@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THOUSAND — Mobile Development</title>
-    <link rel="stylesheet" href="/src/assets/styles/style.css">
+    <title>IT WEBSITE - Mobile Development</title>
+    <!-- ИСПРАВЛЕННЫЙ ПУТЬ: без слэша в начале, с учетом папки styles -->
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!-- ШАПКА -->
     <header class="site-header">
-        <a class="logo" href="index.html">
-            <strong>THOUSAND</strong>
-            <span>digital company</span>
+        <a class="logo" href="#">
+            <strong>IT WEBSITE</strong>
         </a>
 
         <nav class="main-nav">
@@ -22,33 +25,31 @@
         </nav>
 
         <div class="header-contacts">
-            <a href="tel:+77072548147">♧ +7 (707) 254 81 47</a>
-            <a href="tel:+777838959026">+7 (778) 395 90 26</a>
-            <a href="mailto:thousanditcompany@gmail.com">
-                ✉ thousanditcompany@gmail.com
-            </a>
+            <a href="tel:+77072548147">+7 (707) 254 81 47</a>
+            <a href="mailto:thousanditcompany@gmail.com" class="email-link">✉ thousanditcompany@gmail.com</a>
         </div>
+
+        <button class="burger-menu" aria-label="Открыть меню">
+            <span></span><span></span><span></span>
+        </button>
     </header>
 
+    <!-- ГЛАВНЫЙ КОНТЕНТ -->
     <main class="main-content">
+        
+        <!-- ПЕРВЫЙ ЭКРАН (HERO) -->
         <section class="hero">
             <div class="hero-info">
                 <h1>
-                    Development of <span>mobile applications</span>
-                    and <span>web services</span> of any complexity
+                    Development of <span>mobile applications</span> and <span>web services</span> of any complexity
                 </h1>
 
                 <p class="hero-description">
-                    We create mobile applications for iOS, Android that
-                    transfer your business to mobile applications
-                    of your customers' devices.
+                    We create mobile applications for iOS, Android that transfer your business to mobile applications of your customers' devices.
                 </p>
 
                 <form class="consultation-form">
-                    <h2>
-                        Leave your contacts and we will call you back
-                        within 30 minutes
-                    </h2>
+                    <h2>Leave your contacts and we will call you back within 30 minutes</h2>
 
                     <div class="form-fields">
                         <label>
@@ -67,50 +68,71 @@
             </div>
 
             <div class="hero-gallery">
-                <img src="/src/assets/img/app-screen.png" alt="Mobile application screen">
+                <!-- Укажите путь к вашей картинке из папки img -->
+                <img src="assets/img/app-screen.png" alt="Mobile application screens">
             </div>
         </section>
 
+        <!-- ВТОРОЙ ЭКРАН (УСЛУГИ) -->
         <section class="services" id="services">
-            <h2>Full development cycle</h2>
-            <p>We provide all the services needed to launch your project.</p>
+            <div class="services-header">
+                <h2>Full development cycle</h2>
+                <p>We use proven technologies</p>
+            </div>
 
-            <div class="services-grid">
-                <!-- Заменили article на div, так как это просто карточки в сетке -->
-                <div class="service-card">
-                    <h3>Web development</h3>
-                    <p>Corporate websites, online stores and web services.</p>
+            <div class="services-layout">
+                <!-- Левая часть: Технологии -->
+                <div class="tech-columns">
+                    <div class="tech-block">
+                        <h3>Web</h3>
+                        <p>PHP / JavaScript / Node.JS / Web Socket / Socket.io / Vue.js / Nuxt / MySQL / Laravel / GO lang / django / Python</p>
+                    </div>
+                    <div class="tech-block">
+                        <h3>Mobile</h3>
+                        <p>Swift / Kotlin / Namastee / Firebase / CoreData / Realm / OkHttp / Retrofit / Alamofire / REST / GraphQL</p>
+                    </div>
                 </div>
 
-                <div class="service-card">
-                    <h3>iOS development</h3>
-                    <p>Mobile applications for Apple devices.</p>
-                </div>
-
-                <div class="service-card">
-                    <h3>Android development</h3>
-                    <p>Applications for Android smartphones and tablets.</p>
-                </div>
-
-                <div class="service-card">
-                    <h3>UX/UI design</h3>
-                    <p>Convenient interfaces and modern visual design.</p>
+                <!-- Правая часть: Услуги со стрелками -->
+                <div class="services-list">
+                    <a href="#" class="service-item">iOS development <span>&#8594;</span></a>
+                    <a href="#" class="service-item">Android development <span>&#8594;</span></a>
+                    <a href="#" class="service-item">Web development <span>&#8594;</span></a>
+                    <a href="#" class="service-item">UI/UX design <span>&#8594;</span></a>
+                    <a href="#" class="service-item">Testing <span>&#8594;</span></a>
+                    <a href="#" class="service-item">Launch <span>&#8594;</span></a>
+                    <a href="#" class="service-item">IT consulting <span>&#8594;</span></a>
                 </div>
             </div>
         </section>
 
+        <!-- БАННЕР ПРИЗЫВ К ДЕЙСТВИЮ -->
         <section class="contact-banner" id="contacts">
-            <div>
-                <h2>Let's discuss your project</h2>
-                <p>Tell us about your idea and we will contact you.</p>
+            <div class="banner-content">
+                <h2>Let's discuss<br>Your project</h2>
+                <p>Let's figure out how to create an effective application, its cost and terms of its development</p>
             </div>
 
-            <a href="mailto:thousanditcompany@gmail.com">
-                Get in touch
-            </a>
+            <div class="banner-form">
+                <form>
+                    <div class="banner-fields">
+                        <label>
+                            Phone number
+                            <input type="tel" placeholder="+7 (702) 517-11-98">
+                        </label>
+                        <label>
+                            Full name
+                            <input type="text" placeholder="Your name">
+                        </label>
+                    </div>
+                    <button type="submit">Discuss the project</button>
+                </form>
+            </div>
         </section>
+
     </main>
 
+    <!-- ПОДВАЛ (FOOTER) -->
     <footer class="site-footer">
         <h2 class="footer-title">IT WEBSITE</h2>
         

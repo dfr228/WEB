@@ -1,9 +1,8 @@
-@import "./global.css";
-@import "./fonts.css";
-@import "./utils.css";
-
+/* --- БАЗОВЫЕ СТИЛИ --- */
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -12,10 +11,9 @@ html {
 }
 
 body {
-    margin: 0;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
     font-family: 'Inter', Arial, sans-serif;
     color: #182333;
     background: #f1f3f7;
@@ -28,54 +26,47 @@ a {
 
 button, input {
     font: inherit;
+    border: none;
+    outline: none;
 }
 
 .main-content {
-    padding-top: 95px;
+    padding-top: 100px;
+    flex: 1;
 }
 
+/* --- ШАПКА --- */
 .site-header {
     position: fixed;
-    z-index: 1000;
     top: 15px;
     left: 8%;
     width: 84%;
     min-height: 65px;
-    padding: 12px 20px;
+    padding: 10px 24px;
     display: grid;
-    grid-template-columns: 130px 1fr auto;
+    grid-template-columns: 150px 1fr auto;
     align-items: center;
     gap: 24px;
     background: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(30, 45, 70, 0.08);
-}
-
-.logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #1673e8;
+    z-index: 1000;
 }
 
 .logo strong {
     font-size: 18px;
+    color: #1673e8;
     letter-spacing: -0.5px;
-}
-
-.logo span {
-    font-size: 7px;
-    color: #8994a5;
 }
 
 .main-nav {
     display: flex;
     justify-content: center;
-    gap: 22px;
+    gap: 24px;
 }
 
 .main-nav a {
-    font-size: 12px;
+    font-size: 13px;
     transition: color 0.2s;
 }
 
@@ -91,19 +82,35 @@ button, input {
 
 .header-contacts a {
     color: #3476bd;
-    font-size: 11px;
+    font-size: 12px;
     white-space: nowrap;
 }
 
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    cursor: pointer;
+}
+
+.burger-menu span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #182333;
+}
+
+/* --- ПЕРВЫЙ ЭКРАН (HERO) --- */
 .hero {
     position: relative;
-    min-height: calc(100vh - 95px);
-    padding: 65px 8% 70px;
+    min-height: calc(100vh - 100px);
+    padding: 60px 8% 70px;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 40px;
-    overflow: hidden; /* Обрезает картинку по краям */
+    overflow: hidden;
 }
 
 .hero-info {
@@ -113,10 +120,10 @@ button, input {
 }
 
 .hero-info h1 {
-    margin: 0 0 20px;
-    font-size: clamp(30px, 3vw, 46px);
+    font-size: clamp(32px, 3vw, 46px);
     line-height: 1.2;
     font-weight: 700;
+    margin-bottom: 24px;
 }
 
 .hero-info h1 span {
@@ -124,28 +131,27 @@ button, input {
 }
 
 .hero-description {
-    margin: 0 0 38px;
     font-size: 14px;
     line-height: 1.6;
     color: #343e4d;
+    margin-bottom: 38px;
 }
 
 .consultation-form {
-    position: relative;
-    z-index: 3;
     width: 100%;
     max-width: 620px;
-    padding: 22px;
+    padding: 24px;
     background: #ffffff;
     border-radius: 10px;
     box-shadow: 0 8px 24px rgba(30, 45, 70, 0.1);
 }
 
 .consultation-form h2 {
-    margin: 0 0 22px;
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.3;
     font-weight: 500;
+    margin-bottom: 22px;
+    max-width: 400px;
 }
 
 .form-fields {
@@ -164,11 +170,8 @@ button, input {
 }
 
 .form-fields input {
-    width: 100%;
     padding: 8px 0;
-    border: none;
     border-bottom: 1px solid #dce2eb;
-    outline: none;
     background: transparent;
     font-size: 13px;
     color: #182333;
@@ -180,14 +183,14 @@ button, input {
 
 .form-fields button {
     min-height: 42px;
-    padding: 0 17px;
-    border: none;
-    border-radius: 5px;
+    padding: 0 20px;
     background: #1768ed;
     color: #ffffff;
     font-size: 12px;
+    border-radius: 5px;
     cursor: pointer;
     transition: background 0.2s;
+    white-space: nowrap;
 }
 
 .form-fields button:hover {
@@ -195,105 +198,170 @@ button, input {
 }
 
 .hero-gallery {
-    position: absolute; 
-    top: 0;
-    right: 0;
-    width: 50%; 
-    height: 100%;
-    background-image: url('/src/assets/img/app-screen.png');
-    background-size: cover; 
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.hero-gallery img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* --- УСЛУГИ --- */
 .services {
-    padding: 60px 8%;
+    padding: 80px 8%;
     background: #ffffff;
 }
 
-.services h2 {
-    margin: 0 0 12px;
-    font-size: 28px;
+.services-header {
+    margin-bottom: 50px;
 }
 
-.services > p {
-    margin-bottom: 32px;
+.services-header h2 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.services-header p {
     color: #697588;
     font-size: 15px;
 }
 
-.services-grid {
+.services-layout {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
 }
 
-.service-card {
-    padding: 24px;
-    border: 1px solid #e5eaf1;
-    border-radius: 8px;
-    transition: box-shadow 0.2s;
-}
-
-.service-card:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-}
-
-.service-card h3 {
-    margin: 0 0 12px;
-    font-size: 18px;
-}
-
-.service-card p {
-    margin: 0;
-    color: #697588;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-.contact-banner {
-    padding: 50px 8%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.tech-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 30px;
+}
+
+.tech-block h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.tech-block p {
+    font-size: 12px;
+    line-height: 1.8;
+    color: #697588;
+}
+
+.services-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.service-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid #e5eaf1;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.service-item:first-child {
+    padding-top: 0;
+}
+
+.service-item span {
+    color: #a0aab8;
+    font-size: 16px;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.service-item:hover {
+    color: #1673e8;
+}
+
+.service-item:hover span {
+    transform: translateX(5px);
+    color: #1673e8;
+}
+
+/* --- БАННЕР --- */
+.contact-banner {
     background: #2863f5;
+    padding: 60px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
     color: #ffffff;
 }
 
-.contact-banner h2 {
-    margin: 0 0 12px;
-    font-size: 28px;
+.banner-content h2 {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 16px;
 }
 
-.contact-banner p {
-    margin: 0;
-    font-size: 15px;
-    line-height: 1.5;
-    opacity: 0.9;
-}
-
-.contact-banner a {
-    padding: 15px 30px;
-    border-radius: 5px;
-    background: #ffffff;
-    color: #1768ed;
+.banner-content p {
     font-size: 14px;
-    font-weight: 600;
-    white-space: nowrap;
+    opacity: 0.8;
+    max-width: 400px;
+    line-height: 1.5;
+}
+
+.banner-form {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 450px;
+}
+
+.banner-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.banner-fields label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #778294;
+    font-size: 11px;
+}
+
+.banner-fields input {
+    padding: 8px 0;
+    border-bottom: 1px solid #dce2eb;
+    font-size: 13px;
+    color: #182333;
+}
+
+.banner-form button {
+    background: #1768ed;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    width: 100%;
     transition: background 0.2s;
 }
 
-.contact-banner a:hover {
-    background: #f1f3f7;
+.banner-form button:hover {
+    background: #0955cc;
 }
 
+/* --- ПОДВАЛ --- */
 .site-footer {
-    margin-top: auto;
-    padding: 50px 8% 40px;
     background-color: #1a2233;
     color: #ffffff;
+    padding: 60px 8% 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -301,9 +369,7 @@ button, input {
 }
 
 .footer-title {
-    margin: 0;
-    font-size: 26px;
-    font-weight: 700;
+    font-size: 24px;
     letter-spacing: 1.5px;
 }
 
@@ -318,33 +384,155 @@ button, input {
 .footer-item {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
 .footer-label {
     color: #8b95a5;
     font-size: 12px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
 }
 
-.footer-item a,
+.footer-item a, 
 .footer-item span:not(.footer-label) {
     color: #ffffff;
     font-size: 14px;
     font-weight: 500;
 }
 
-.footer-item a:hover {
-    color: #8b95a5;
-}
-
 .footer-bottom {
-    display: flex;
-    align-items: center;
-    gap: 10px;
     font-size: 13px;
     color: #8b95a5;
-    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* =========================================
+   АДАПТИВНОСТЬ (Breakpoints)
+   ========================================= */
+
+/* Планшеты (до 1024px) */
+@media (max-width: 1024px) {
+    .site-header {
+        grid-template-columns: 1fr auto;
+    }
+    .header-contacts {
+        display: none;
+    }
+    .main-nav {
+        display: none;
+    }
+    .burger-menu {
+        display: flex;
+    }
+    
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 40px;
+    }
+    .hero-info {
+        margin: 0 auto;
+    }
+    .hero-description {
+        margin: 0 auto 30px;
+    }
+    .consultation-form {
+        margin: 0 auto;
+        text-align: left;
+    }
+    .form-fields {
+        grid-template-columns: 1fr 1fr;
+    }
+    .form-fields button {
+        grid-column: 1 / -1;
+    }
+    
+    .services-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .tech-columns {
+        gap: 40px;
+    }
+    
+    .contact-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .banner-content p {
+        margin: 0 auto;
+    }
+    .banner-form {
+        margin: 0 auto;
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        text-align: center;
+    }
+    .footer-item {
+        align-items: center;
+    }
+}
+
+/* Мобильные (до 768px) */
+@media (max-width: 768px) {
+    .site-header {
+        left: 5%;
+        width: 90%;
+        padding: 10px 15px;
+    }
+    
+    .hero {
+        padding: 30px 5%;
+    }
+    .hero-info h1 {
+        font-size: 28px;
+    }
+    
+    .consultation-form {
+        padding: 20px;
+    }
+    .form-fields {
+        grid-template-columns: 1fr;
+    }
+    
+    .services {
+        padding: 40px 5%;
+    }
+    .tech-columns {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-banner {
+        padding: 40px 5%;
+    }
+    .banner-fields {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Очень маленькие (до 425px) */
+@media (max-width: 425px) {
+    .site-header {
+        left: 3%;
+        width: 94%;
+    }
+    .hero-info h1 {
+        font-size: 24px;
+    }
+    .hero-description {
+        font-size: 13px;
+    }
+    .services-header h2 {
+        font-size: 26px;
+    }
+    .banner-content h2 {
+        font-size: 26px;
+    }
 }
