@@ -1,7 +1,4 @@
-*,
-*::before,
-*::after { box-sizing: border-box; }
-
+*, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 100px; }
 
 body {
@@ -577,15 +574,7 @@ a.footer__value:hover { color: #93b4ff; }
   font-size: 13px;
 }
 
-@media (max-width: 1200px) {
-  .container { padding: 0 48px; }
-  .hero__image { margin-right: -48px; }
-  .nav { margin-left: 16px; }
-  .header__phones a:nth-of-type(2) { display: none; }
-  .promo__book { margin-right: 40px; }
-}
-
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .container { padding: 0 32px; }
   .burger { display: flex; }
   .header__inner { position: relative; }
@@ -642,7 +631,7 @@ a.footer__value:hover { color: #93b4ff; }
   .team__video { max-width: 604px; width: 100%; margin: 0 auto; }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 425px) {
   .container { padding: 0 16px; }
   .header { padding: 0 8px; top: 8px; margin-top: 8px; }
   .header__inner { padding: 0 16px; }
@@ -698,11 +687,4 @@ a.footer__value:hover { color: #93b4ff; }
   .footer__logo { font-size: 28px; }
   .footer__grid { grid-template-columns: 1fr; gap: 20px; margin-top: 24px; }
   .footer__world { margin-top: 28px; }
-}
-
-@media (max-width: 425px) {
-  .hero__title { font-size: 26px; }
-  .promo__title { font-size: 26px; }
-  .section-title { font-size: 28px; }
-  .stat__value { font-size: 26px; }
 }
