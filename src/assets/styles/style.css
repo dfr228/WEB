@@ -1,11 +1,3 @@
-/* =========================================================
-   IT WEBSITE — СКОМПИЛИРОВАННЫЙ CSS.
-   Не редактируйте этот файл: правьте .scss и пересобирайте:
-   npx sass src/assets/styles/style.scss src/assets/styles/style.css
-   Адаптив: desktop (> 1024px), планшет (≤ 1024px / 768px),
-   телефон (≤ 767px / 425px)
-   ========================================================= */
-
 *,
 *::before,
 *::after { box-sizing: border-box; }
@@ -43,7 +35,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   color: #111827;
 }
 
-/* ---------- Кнопка ---------- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -68,7 +59,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   line-height: 1.2;
 }
 
-/* ---------- Шапка ---------- */
 .header {
   position: sticky;
   top: 12px;
@@ -149,10 +139,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 .menu-toggle:checked + .burger span:nth-child(2) { opacity: 0; }
 .menu-toggle:checked + .burger span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-/* ---------- Главный экран ---------- */
 .hero {
   position: relative;
-  margin-top: -82px;          /* фон уходит под шапку */
+  margin-top: -82px;       
   padding: 82px 0 0;
   background: #f3f4f6;
   overflow: hidden;
@@ -191,7 +180,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   margin-right: -108px;
 }
 
-/* ---------- Колонки телефонов (анимация) ---------- */
 .phones {
   position: absolute;
   top: -360px;
@@ -246,7 +234,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   .phones__track { animation: none; }
 }
 
-/* ---------- Карточка формы ---------- */
 .form-card {
   padding: 32px 24px 24px;
   background: #ffffff;
@@ -289,7 +276,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   gap: 10px;
   border-bottom: 1px solid #e5e7eb;
 }
-/* флаг Казахстана нарисован градиентами */
 .field__flag {
   flex-shrink: 0;
   width: 16px;
@@ -316,7 +302,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 .field__input:user-invalid,
 .field__phone:has(.field__input:user-invalid) { border-color: #dc2626; }
 
-/* ---------- Полный цикл разработки ---------- */
 .services { padding: 120px 0; }
 .services__inner {
   display: grid;
@@ -365,7 +350,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 .service-link:hover { border-bottom-color: #2f6bea; }
 .service-link:hover .icon { transform: translateX(3px); }
 
-/* ---------- FAQ ---------- */
 .faq { padding: 80px 0 120px; }
 .faq__title { margin-bottom: 44px; }
 .faq__grid {
@@ -434,7 +418,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 .faq-item__answer p + p { margin-top: 20px; }
 .faq-item[open] .faq-item__answer { padding-bottom: 30px; }
 
-/* ---------- Наша команда ---------- */
 .team {
   padding: 88px 0 100px;
   background: #f3f4f6;
@@ -495,7 +478,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 .play-btn .icon { width: 26px; height: 26px; margin-left: 3px; }
 .play-btn:hover { background: #1d4fd1; transform: translate(-50%, -50%) scale(1.08); }
 
-/* ---------- Синие промо-блоки ---------- */
 .promo {
   position: relative;
   padding: 80px 0;
@@ -503,7 +485,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   background-color: #2563eb;
   overflow: hidden;
 }
-/* зернистая текстура фона, как в макете */
 .promo::before {
   content: "";
   position: absolute;
@@ -547,7 +528,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 .promo--discuss .promo__content { flex: 0 1 420px; }
 .discuss-form { flex: 0 1 600px; }
 
-/* ---------- Подвал ---------- */
 .footer {
   max-width: 1272px;
   margin: 24px auto;
@@ -597,9 +577,6 @@ a.footer__value:hover { color: #93b4ff; }
   font-size: 13px;
 }
 
-/* =========================================================
-   Ноутбуки (≤ 1200px)
-   ========================================================= */
 @media (max-width: 1200px) {
   .container { padding: 0 48px; }
   .hero__image { margin-right: -48px; }
@@ -608,12 +585,8 @@ a.footer__value:hover { color: #93b4ff; }
   .promo__book { margin-right: 40px; }
 }
 
-/* =========================================================
-   Планшет (≤ 1024px, макет 768px)
-   ========================================================= */
 @media (max-width: 1024px) {
   .container { padding: 0 32px; }
-  /* шапка → бургер-меню */
   .burger { display: flex; }
   .header__inner { position: relative; }
   .header__menu {
@@ -639,7 +612,6 @@ a.footer__value:hover { color: #93b4ff; }
   .header__contacts { flex-direction: column; align-items: flex-start; gap: 12px; font-size: 16px; }
   .header__phones a:nth-of-type(2) { display: inline; }
 
-  /* главный экран: картинка под формой */
   .hero__inner { flex-direction: column; align-items: stretch; min-height: 0; gap: 0; }
   .hero__content { flex: none; padding: 64px 0 40px; }
   .hero__image { flex: none; height: 480px; margin: 0 -32px; overflow: hidden; }
@@ -670,9 +642,6 @@ a.footer__value:hover { color: #93b4ff; }
   .team__video { max-width: 604px; width: 100%; margin: 0 auto; }
 }
 
-/* =========================================================
-   Телефон (≤ 767px, макет 425px)
-   ========================================================= */
 @media (max-width: 767px) {
   .container { padding: 0 16px; }
   .header { padding: 0 8px; top: 8px; margin-top: 8px; }
@@ -731,7 +700,6 @@ a.footer__value:hover { color: #93b4ff; }
   .footer__world { margin-top: 28px; }
 }
 
-/* ≤ 425px — мелкие доработки */
 @media (max-width: 425px) {
   .hero__title { font-size: 26px; }
   .promo__title { font-size: 26px; }
