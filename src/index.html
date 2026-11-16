@@ -100,12 +100,14 @@
 
   <header class="header">
     <div class="header__inner">
-      <a href="#" class="logo">IT WEBSITE</a>
-
       <input type="checkbox" id="menu-toggle" class="menu-toggle">
       <label for="menu-toggle" class="burger" aria-label="Menu">
-        <span></span><span></span><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </label>
+
+      <a href="#" class="logo">IT WEBSITE</a>
 
       <div class="header__menu">
         <nav class="nav">
@@ -116,18 +118,17 @@
           <a href="#contacts" class="nav__link">Contacts</a>
         </nav>
 
-        <div class="header__contacts">
-          <div class="header__phones">
-            <svg class="icon"><use href="#i-phone"/></svg>
-            <a href="tel:+71111111111">+7 (111) 111 11 11</a>
-            <a href="tel:+71111111111">+7 (111) 111 11 11</a>
-          </div>
-          <a href="mailto:itcompany@mail.com" class="header__mail">
-            <svg class="icon"><use href="#i-mail"/></svg>
-            itcompany@mail.com
-          </a>
+        <div class="header__phones">
+          <svg class="icon"><use href="#i-phone"/></svg>
+          <a href="tel:+71111111111">+7 (111) 111 11 11</a>
+          <a href="tel:+71111111111">+7 (111) 111 11 11</a>
         </div>
       </div>
+
+      <a href="mailto:itcompany@mail.com" class="header__mail">
+        <svg class="icon"><use href="#i-mail"/></svg>
+        itcompany@mail.com
+      </a>
     </div>
   </header>
 
@@ -197,11 +198,11 @@
           <p class="services__subtitle">We use proven technologies</p>
           <div class="stack">
             <h3 class="stack__title">Web</h3>
-            <p class="stack__list">PHP / Javascript / Node.JS / Web Socket / Socket.io / Vue.js/ Nuxt / MySQL / Laravel / GO lang / django / Python</p>
+            <p class="stack__list">PHP <span>/</span> Javascript <span>/</span> Node.JS <span>/</span> Web Socket <span>/</span> Socket.io <span>/</span> Vue.js<span>/</span> Nuxt <span>/</span> MySQL <span>/</span> Laravel <span>/</span> GO lang <span>/</span> django <span>/</span> Python</p>
           </div>
           <div class="stack">
             <h3 class="stack__title">Mobile</h3>
-            <p class="stack__list">Swift / Kotlin / Alamofire / Firebase / CoreData / Room / Realm / Coroutine / RxJava / RxSwift / Unit Test / Navigation</p>
+            <p class="stack__list">Swift <span>/</span> Kotlin <span>/</span> Alamofire <span>/</span> Firebase <span>/</span> CoreData <span>/</span> Room <span>/</span> Realm <span>/</span> Coroutine <span>/</span> RxJava <span>/</span> RxSwift <span>/</span> Unit Test <span>/</span> Navigation</p>
           </div>
         </div>
 
@@ -277,38 +278,45 @@
         <h2 class="section-title">Projects we are proud of</h2>
         <p class="projects__text">Our software development company is truly proud of the wonderful clients we have worked with. We enjoy a long-term partnership</p>
 
-        <div class="projects__nav">
-          <nav class="tabs">
+        <article class="project">
+          <nav class="tabs project__tabs">
             <a href="#projects" class="tabs__item tabs__item--active">I-teka</a>
             <a href="#projects" class="tabs__item">Dauletten</a>
             <a href="#projects" class="tabs__item">Guru Bosch</a>
             <a href="#projects" class="tabs__item">Santo</a>
+            <span class="tabs__break"></span>
             <a href="#projects" class="tabs__item">Home Credit Bank</a>
             <a href="#projects" class="tabs__item">BI Partners</a>
             <a href="#projects" class="tabs__item">Europharma</a>
           </nav>
-          <a href="#discuss" class="btn">View 100 more projects</a>
-        </div>
 
-        <article class="project">
-          <div class="project__info">
-            <h3 class="project__title">I-teka</h3>
-            <p class="project__text">The application is designed to search for drugs by availability in pharmacies in cities.<br>
-              During quarantine, the application helped many people,<br> which gives more value.</p>
-            <p class="project__tags">Business analysis <span>/</span> iOS <span>/</span> Android <span>/</span> QA <span>/</span> UI/UX Design</p>
-            <ul class="project__meta">
-              <li><svg class="icon"><use href="#i-pin"/></svg>Kazakhstan</li>
-              <li><svg class="icon"><use href="#i-case"/></svg>Medicine</li>
-            </ul>
-            <ul class="project__stats">
-              <li><span class="project__value">400%</span>User Growth</li>
-              <li><span class="project__value">+ 200 000</span>Active Users</li>
-            </ul>
-            <div class="project__stores">
-              <a href="#"><img src="assets/img/app-store.png" alt="Download on the App Store"></a>
-              <a href="#"><img src="assets/img/google-play.png" alt="Get it on Google Play"></a>
-            </div>
+          <a href="#discuss" class="btn project__btn">View 100 more projects</a>
+
+          <h3 class="project__title">I-teka</h3>
+
+          <p class="project__text">
+            The application is designed to search for drugs by availability in pharmacies in cities.<br>
+            During quarantine, the application helped many people,<br>
+            which gives more value.
+          </p>
+
+          <p class="project__tags">Business analysis <span>/</span> iOS <span>/</span> Android <span>/</span> QA <span>/</span> UI/UX Design</p>
+
+          <ul class="project__meta">
+            <li><svg class="icon"><use href="#i-pin"/></svg>Kazakhstan</li>
+            <li><svg class="icon"><use href="#i-case"/></svg>Medicine</li>
+          </ul>
+
+          <ul class="project__stats">
+            <li><span class="project__value">400%</span>User Growth</li>
+            <li><span class="project__value">+ 200 000</span>Active Users</li>
+          </ul>
+
+          <div class="project__stores">
+            <a href="#"><img src="assets/img/app-store.png" alt="Download on the App Store"></a>
+            <a href="#"><img src="assets/img/google-play.png" alt="Get it on Google Play"></a>
           </div>
+
           <div class="project__image">
             <img src="assets/img/iteka.png" alt="I-teka application screens">
           </div>
@@ -397,13 +405,13 @@
       <div class="container team__inner">
         <div class="team__content">
           <h2 class="section-title">Our team</h2>
-          <p class="team__text">Thousand is a full-cycle digital production company with its own product analytics, design, web and mobile development.</p>
+          <p class="team__text team__text--intro">Thousand is a full-cycle digital production company with its own product analytics, design, web and mobile development.</p>
           <ul class="team__stats">
             <li class="stat"><span class="stat__value">28</span><span class="stat__label">team members</span></li>
             <li class="stat"><span class="stat__value">+100</span><span class="stat__label">projects</span></li>
             <li class="stat"><span class="stat__value">7 years</span><span class="stat__label">in IT sphere</span></li>
           </ul>
-          <p class="team__text">All the necessary specialists - from a designer to a tester - are on our staff. We hire the best specialists in the market. It's expensive but worth it</p>
+          <p class="team__text team__text--outro">All the necessary specialists - from a designer to a tester - are on our staff. We hire the best specialists in the market. It's expensive but worth it</p>
         </div>
 
         <div class="team__video">
@@ -527,9 +535,8 @@
           <a href="#discuss" class="footer__value">Leave a request</a>
         </div>
       </div>
-      <p class="footer__world"><span>🌎</span>We work throughout world</p>
+      <p class="footer__world"><span class="footer__map"></span>We work throughout world</p>
     </div>
   </footer>
-
 </body>
 </html>
