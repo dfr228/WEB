@@ -615,10 +615,6 @@ ol {
   transform: rotate(-12deg);
 }
 
-.phones:hover .phones__track {
-  animation-play-state: paused;
-}
-
 .phones__column {
   flex: 0 0 auto;
   width: max(390px, calc(50% - 20px));

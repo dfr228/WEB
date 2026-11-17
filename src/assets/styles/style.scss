@@ -641,10 +641,6 @@ ol {
   padding-left: 90px;
   transform: rotate(-12deg);
 
-  &:hover &__track {
-    animation-play-state: paused;
-  }
-
   &__column {
     flex: 0 0 auto;
     width: max(390px, calc(50% - 20px));
